@@ -25,7 +25,6 @@ done
 if [[ -z "$globalbiosmountpoint" ]]
 then
     read -e -p 'Set the BIOS directory: ' $globalbiosmountpoint
-    emptycheck=$()
     
     if [[ ! -d "$globalbiosmountpoint" ]]
     then
@@ -33,8 +32,9 @@ then
         echo You need to mount a drive or add a BIOS before you continue
         export $globalbiosmountpoint
         exit
-        
-        
+    #elif to check if the newly set $globalbiosmountpoint is empty. This is a bit complicated, so it's on the backburner.
+    fi
+fi
 
 sudo atiflash -i
 
