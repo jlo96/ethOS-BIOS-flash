@@ -38,10 +38,10 @@ then
     echo Backup is completed...
 fi
 
-cd ~/mnt/drive2
+cd $globalbiosmountpoint
 
-ls ~/mnt/drive2
+ls $globalbiosmountpoint
 
 read -e -p 'Select BIOS: ' targetbios
 
-sudo atiflash -f -p "$targetgpu" ~/mnt/drive2/"$targetbios"
+sudo atiflash -f -p "$targetgpu" ~$globalbiosmountpoint/"$targetbios"
