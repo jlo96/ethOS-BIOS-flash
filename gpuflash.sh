@@ -24,7 +24,7 @@ done
 
 if [[ -z "$globalbiosmountpoint" ]]
 then
-    read -e -p 'Set the BIOS directory: ' $globalbiosmountpoint
+    read -e -p 'Set the BIOS directory: ' globalbiosmountpoint
     
     if [[ ! -d "$globalbiosmountpoint" ]]
     then
