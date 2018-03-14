@@ -46,7 +46,7 @@ sudo blkid -c /dev/null
 
 read -e -p 'Drive: ' biosdrive #drive name, e.g. sdb1
 
-drivetype=$(blkid -o value -s TYPE /dev/"$biosdrive")
+drivetype=$(blkid -o value -t TYPE /dev/"$biosdrive")
 
 if [ ! -d "$globalbiosmountpoint" ]
 then
