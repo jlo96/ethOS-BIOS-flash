@@ -22,6 +22,19 @@ while getopts ':bh' flag; do
     esac
 done
 
+if [[ -z "$globalbiosmountpoint" ]]
+then
+    read -e -p 'Set the BIOS directory: ' globalbiosmountpoint
+    
+    if [[ ! -d "$globalbiosmountpoint" ]]
+    then
+        mkdir -p "$globalbiosmountpoint"
+        echo You need to mount a drive or add a BIOS before you continue
+        export $globalbiosmountpoint
+        exit
+    #elif to check if the newly set $globalbiosmountpoint is empty. This is a bit complicated, so it's on the backburner.
+    fi
+fi
 
 sudo atiflash -i
 
@@ -38,10 +51,10 @@ then
     echo Backup is completed...
 fi
 
-cd ~/mnt/drive2
+cd $globalbiosmountpoint
 
-ls ~/mnt/drive2
+ls $globalbiosmountpoint
 
 read -e -p 'Select BIOS: ' targetbios
 
-sudo atiflash -f -p "$targetgpu" ~/mnt/drive2/"$targetbios"
+sudo atiflash -f -p "$targetgpu" ~$globalbiosmountpoint/"$targetbios"

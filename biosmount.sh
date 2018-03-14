@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Quickly mount the external drive you want to pull your bios from
+
 display_help() {
 echo Usage: biosmount [options]
 echo  options:
