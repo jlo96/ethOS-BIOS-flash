@@ -22,6 +22,19 @@ while getopts ':bh' flag; do
     esac
 done
 
+if [[ -z "$globalbiosmountpoint" ]]
+then
+    read -e -p 'Set the BIOS directory: ' $globalbiosmountpoint
+    emptycheck=$()
+    
+    if [[ ! -d "$globalbiosmountpoint" ]]
+    then
+        mkdir -p "$globalbiosmountpoint"
+        echo You need to mount a drive or add a BIOS before you continue
+        export $globalbiosmountpoint
+        exit
+        
+        
 
 sudo atiflash -i
 
