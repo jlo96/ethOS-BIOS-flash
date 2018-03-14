@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Flash a BIOS to GPUs in an ethOS rig
-#takes -b (backup?)
+#
 backup='true'
 display_help() {
 echo    Usage: gpuflash [options]
