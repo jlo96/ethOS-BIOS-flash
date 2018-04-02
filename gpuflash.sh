@@ -19,9 +19,9 @@ while getopts ':bh' flag; do
     case "${flag}" in
         b) backup='false' ;;
         h) display_help
-           exit ;;
+           return ;;
         *) echo "Unexpected flag. Try -h for help"
-           exit ;;
+           return ;;
     esac
 done
 
@@ -36,13 +36,13 @@ then
         if [[ $? -ne 0 ]]
             then
             echo "The directory wasn't made for some reason. Did you not start it with / or did you include ~?"
-            exit
+            return
         else
             echo "Success"
         fi
         echo You need to mount a drive or add a BIOS before you continue
         export globalbiosmountpoint
-        exit
+        return
     else
         echo OK, $globalbiosmountpoint was set as the BIOS directory
         export globalbiosmountpoint
