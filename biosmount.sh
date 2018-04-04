@@ -17,9 +17,9 @@ while getopts "hm:" flag; do
         m) globalbiosmountpoint=${OPTARG}
            custom='true' ;;
         h) display_help 
-           exit ;;
+           return ;;
         *) echo "Unexpected flag. Try -h for help" 
-           exit ;;
+           return ;;
     esac
 done
 
