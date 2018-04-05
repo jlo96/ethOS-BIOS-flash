@@ -28,7 +28,7 @@ then
     globalbiosmountpoint="$HOME"/mnt/drive2
     echo "Setting mount point as ("$globalbiosmountpoint")"
     echo "Unless this is your first run, the mount point might not be globally set"
-    echo "Please make sure to ran this script in your parent shell. See -h"
+    echo "Please make sure to run this script in your parent shell. See -h"
     echo ""
 elif [[ -n "$globalbiosmountpoint" && "$custom" = 'true' ]]
 then
