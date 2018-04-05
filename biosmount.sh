@@ -8,7 +8,7 @@ echo  options:
 echo   "-m <path>, manually select a mount point. Otherwise, defaults to "$HOME"/mnt/drive2"
 echo   "-h, display this help page"
 
-echo "The first time you run biosmount, or if you set a new mount point, you must run it in your parent shell, or gpuflash won't work! Do this by running as . ./biosmount.sh"
+echo "The first time you run biosmount, or if you set a new mount point, you must run it in your parent shell, or gpuflash won't work! Do this by running as bash biosmount.sh"
 
 }
 
@@ -17,9 +17,9 @@ while getopts "hm:" flag; do
         m) globalbiosmountpoint=${OPTARG}
            custom='true' ;;
         h) display_help 
-           return ;;
+           exit ;;
         *) echo "Unexpected flag. Try -h for help" 
-           return ;;
+           exit ;;
     esac
 done
 
