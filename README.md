@@ -11,4 +11,4 @@ Run -h on the files to get exact usage
 
 --------------------------------
 
-This repo is a work is progress. It's not packed, and there's still functionality to be added.
+This repo is a work is progress. It's not packed, and there's still functionality to be added. Eventually, it will be moved to Python, instead of raw BASH.
